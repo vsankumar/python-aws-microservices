@@ -1,3 +1,5 @@
+[![Python application test with Github Actions](https://github.com/vsankumar/python-aws-microservices/actions/workflows/devops.yml/badge.svg)](https://github.com/vsankumar/python-aws-microservices/actions/workflows/devops.yml)
+
 # python-aws-microservices
 
 ## Scaffold
