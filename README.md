@@ -4,7 +4,7 @@
 
 ## Scaffold
 
-1. Create a python virtual environment 'python3 -m venv ~/.venv' or 'virtualenv ~/.venv
+1. Create a python virtual environment 'python3 -m venv ~/.venv' or 'virtualenv ~/.venv OR source ~/.venv/bin/activate
 2. create  the empty files 'Makefile', 'Requirements.txt', 'main.py' (runs on microservice), 'Dockerfile', 'mylib/__init__.py'
 3.populate 'Makefile' (lifecycle of the project)
 4. setup continuous integration, i.e. check code for issues like lint errors
