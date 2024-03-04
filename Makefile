@@ -2,11 +2,13 @@ install:
 	#install commands
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
+
 post-install:
 	python -m textblob.download_corpora
+
 format:
 	#format code
-	black *.py mylib/*.py	
+	black *.py mylib/*.py
 lint:
 	#flake8 or #pylint
 	pylint --disable=R,C *.py mylib/*.py
@@ -22,10 +24,9 @@ run:
 
 deploy:
 	#deploy
-	aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 044268922877.dkr.ecr.eu-west-1.amazonaws.com
-	docker build -t wiki .
-	docker tag wiki:latest 044268922877.dkr.ecr.eu-west-1.amazonaws.com/wiki:latest
-	docker push 044268922877.dkr.ecr.eu-west-1.amazonaws.com/wiki:latest
-
+	aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 044268922877.dkr.ecr.eu-west-1.amazonaws.com	docker build -t wiki .
+	docker build -t fastapi-wiki .
+	docker tag fastapi-wiki:latest 044268922877.dkr.ecr.eu-west-1.amazonaws.com/fastapi-wiki:latest
+	docker push 044268922877.dkr.ecr.eu-west-1.amazonaws.com/fastapi-wiki:latest
 
 all: install post-install lint test deploy
