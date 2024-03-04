@@ -20,7 +20,7 @@ build:
 	docker build -t deploy-fastapi .
 run:
 	#run docker
-	#docker run -p 127.0.0.1:8080:8080 a62755a3b85e
+	docker run -p 127.0.0.1:8080:8080 a62755a3b85e
 
 deploy:
 	#deploy
