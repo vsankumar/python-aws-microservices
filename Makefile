@@ -16,7 +16,7 @@ build:
 	docker build -t deploy-fastapi .
 run:
 	#run docker
-	docker run -p 127.0.0.1:8080:8080 ff9a45350cb4
+	#docker run -p 127.0.0.1:8080:8080 ff9a45350cb4
 deploy:
 	#deploy
 all: install lint test deploy
