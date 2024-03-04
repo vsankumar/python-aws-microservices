@@ -2,7 +2,7 @@ install:
 	#install commands
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
-postinstall:
+post-install:
 	python -m textblob.download_corpora
 format:
 	#format code
@@ -18,7 +18,7 @@ build:
 	docker build -t deploy-fastapi .
 run:
 	#run docker
-	#docker run -p 127.0.0.1:8080:8080 ff9a45350cb4
+	#docker run -p 127.0.0.1:8080:8080 a62755a3b85e
 deploy:
 	#deploy
 	aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 044268922877.dkr.ecr.eu-west-1.amazonaws.com
@@ -26,4 +26,4 @@ deploy:
 	docker tag wiki:latest 044268922877.dkr.ecr.eu-west-1.amazonaws.com/wiki:latest
 	docker push 044268922877.dkr.ecr.eu-west-1.amazonaws.com/wiki:latest
 
-all: install postinstall lint test deploy
+all: install post-install lint test deploy
