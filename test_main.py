@@ -1,9 +1,9 @@
-from fastapi import FastAPI
 from fastapi.testclient import TestClient
 from main import app
 
 
 client = TestClient(app)
+
 
 def test_read_main():
     response = client.get("/")
@@ -14,10 +14,12 @@ def test_read_main():
 def test_read_phrase():
     response = client.get("/phrase/Sachin Tendulkar")
     assert response.status_code == 200
-    assert response.json() == {"result": [
-        "sachin ramesh tendulkar",
-        "[ sətɕin teːɳɖulkəɾ ]",
-        "april",
-        "international cricketer",
-        "indian national team"
-    ]}    
+    assert response.json() == {
+        "result": [
+            "sachin ramesh tendulkar",
+            "[ sətɕin teːɳɖulkəɾ ]",
+            "april",
+            "international cricketer",
+            "indian national team",
+        ]
+    }
