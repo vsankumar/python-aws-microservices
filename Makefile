@@ -24,7 +24,7 @@ run:
 
 deploy:
 	#deploy
-	aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 044268922877.dkr.ecr.eu-west-1.amazonaws.com	docker build -t wiki .
+	aws ecr get-login-password --region eu-west-1 | docker login --username AWS --password-stdin 044268922877.dkr.ecr.eu-west-1.amazonaws.com
 	docker build -t fastapi-wiki .
 	docker tag fastapi-wiki:latest 044268922877.dkr.ecr.eu-west-1.amazonaws.com/fastapi-wiki:latest
 	docker push 044268922877.dkr.ecr.eu-west-1.amazonaws.com/fastapi-wiki:latest
